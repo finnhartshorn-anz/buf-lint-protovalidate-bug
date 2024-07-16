@@ -7,13 +7,8 @@ import "buf/validate/validate.proto";
 // Repeated fields are interpretted as the single type (int32 here) rather than as a list
 message Bug {
   repeated int32 field_1 = 1 [(buf.validate.field).cel = {
-    id: "bug-1",
-    message: "bug",
+    id: "bug"
+    message: "bug"
     expression: "size(this) != 0"
-}];
-  repeated int32 field_2 = 2 [(buf.validate.field).cel = {
-    id: "bug-2",
-    message: "bug, second example",
-    expression: "this.filter(r, r > 4).unique()"
-}];
+  }];
 }
